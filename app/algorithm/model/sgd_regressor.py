@@ -6,17 +6,16 @@ import os, warnings
 warnings.filterwarnings('ignore') 
 
 from sklearn.linear_model import SGDRegressor
+from sklearn.metrics import mean_squared_error
 
 
-model_params_fname = "model_params.save"
+
 model_fname = "model.save"
-history_fname = "history.json"
-MODEL_NAME = "SGD_regressor"
+MODEL_NAME = "SGD_Regressor"
 
-class SGD_regressor(): 
+class SGD_Regressor(): 
     
     def __init__(self, l1_ratio=0.1, alpha=1, tol=1e-3,**kwargs) -> None:
-        super(SGD_regressor, self).__init__(**kwargs)
         self.l1_ratio = np.float(l1_ratio)
         self.alpha = np.float(alpha)
         self.tol= np.float(tol)
@@ -50,8 +49,11 @@ class SGD_regressor():
     def evaluate(self, x_test, y_test): 
         """Evaluate the model and return the loss and metrics"""
         if self.model is not None:
-            return self.model.score(x_test, y_test)        
-
+            # return self.model.score(x_test, y_test)        
+            preds = self.model.predict(x_test)
+            mse = mean_squared_error(y_test, preds, squared=False)
+            return mse
+        
     
     def save(self, model_path): 
         joblib.dump(self.model, os.path.join(model_path, model_fname))
@@ -68,7 +70,7 @@ def save_model(model, model_path):
 
 def load_model(model_path): 
     try: 
-        model = SGD_regressor.load(model_path)        
+        model = SGD_Regressor.load(model_path)        
     except: 
         raise Exception(f'''Error loading the trained {MODEL_NAME} model. 
             Do you have the right trained model in path: {model_path}?''')

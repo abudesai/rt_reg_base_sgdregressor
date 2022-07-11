@@ -40,10 +40,10 @@ this script is useful for doing the algorithm testing locally without needing
 to build the docker image and run the container.
 make sure you create your virtual environment, install the dependencies
 from requirements.txt file, and then use that virtual env to do your testing.
-This isnt foolproof. You can still have host os-related issues, so beware.
+This isnt foolproof. You can still have host os or python version-related issues, so beware.
 '''
 
-model_name = "sgd_regressor"
+model_name= sgd_regressor.MODEL_NAME
 
 
 def create_ml_vol():
@@ -160,6 +160,7 @@ def save_test_outputs(results, run_hpt, dataset_name):
     df = df[["model", "dataset_name", "run_hpt", "num_hpt_trials", "rmse", "r2", "elapsed_time_in_minutes"]]    
     file_path_and_name = get_file_path_and_name(run_hpt, dataset_name)
     df.to_csv(file_path_and_name, index=False)
+    print(df)
 
 def get_file_path_and_name(run_hpt, dataset_name): 
     if dataset_name is None: 

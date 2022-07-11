@@ -1,2 +1,2 @@
 model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
-sgd_regressor,auto_prices,True,30,3287.6748,0.8379,0.03
+SGD_Regressor,auto_prices,True,30,3568.175,0.809,0.04
