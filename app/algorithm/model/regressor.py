@@ -11,11 +11,12 @@ from sklearn.metrics import mean_squared_error
 
 
 model_fname = "model.save"
-MODEL_NAME = "SGD_Regressor"
+
+MODEL_NAME = "reg_base_sgd_regressor"
 
 class Regressor(): 
     
-    def __init__(self, l1_ratio=0.1, alpha=1, tol=1e-3,**kwargs) -> None:
+    def __init__(self, l1_ratio=1e-7, alpha=1e-3, tol=1e-8,**kwargs) -> None:
         self.l1_ratio = np.float(l1_ratio)
         self.alpha = np.float(alpha)
         self.tol= np.float(tol)
