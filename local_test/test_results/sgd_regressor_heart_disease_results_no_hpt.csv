@@ -1,2 +1,0 @@
-model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
-SGD_Regressor,heart_disease,False,,0.8764,0.4147,0.0

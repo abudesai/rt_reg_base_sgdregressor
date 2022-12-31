@@ -1,2 +1,0 @@
-model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
-SGD_Regressor,ailerons,False,,0.0002,0.65,0.01

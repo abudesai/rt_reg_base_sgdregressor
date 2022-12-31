@@ -1,2 +1,0 @@
-model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
-SGD_Regressor,white_wine,False,,0.86,0.1398,0.0

@@ -1,7 +1,0 @@
-model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
-SGD_Regressor,abalone,True,30,2.1071,0.3802,0.04
-SGD_Regressor,auto_prices,True,30,3568.175,0.809,0.04
-SGD_Regressor,computer_activity,True,30,7.4878,0.7374,0.04
-SGD_Regressor,heart_disease,True,30,0.8679,0.4262,0.03
-SGD_Regressor,white_wine,True,30,0.8513,0.1573,0.04
-SGD_Regressor,ailerons,True,30,0.0002,0.7471,0.06
